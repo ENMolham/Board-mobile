@@ -23,11 +23,8 @@ class CustomText extends StatelessWidget {
       padding: EdgeInsets.only(top: paddingTop, right: paddingright),
       child: Text(
         text,
-        style: TextStyle(
-          color: color,
-          fontSize: size,
-          fontWeight: fontWeight,
-        ),
+        style: TextStyle(color: color, fontSize: size, fontWeight: fontWeight),
+        textAlign: TextAlign.center,
       ),
     );
   }

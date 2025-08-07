@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:board_desktop/Core/api/api_consumer.dart';
-import 'package:board_desktop/Core/api/end_points.dart';
-import 'package:board_desktop/Core/constant/strings_constants.dart';
-import 'package:board_desktop/Core/utils/shared_preference_utils.dart';
+import 'package:board_mobile/Core/api/api_consumer.dart';
+import 'package:board_mobile/Core/api/end_points.dart';
+import 'package:board_mobile/Core/constant/strings_constants.dart';
+import 'package:board_mobile/Core/utils/shared_preference_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 

@@ -1,4 +1,4 @@
-# board_desktop
+# board_mobile
 
 A new Flutter project.
 

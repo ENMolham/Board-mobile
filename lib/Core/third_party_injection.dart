@@ -1,4 +1,4 @@
-import 'package:board_desktop/Core/utils/shared_preference_utils.dart';
+import 'package:board_mobile/Core/utils/shared_preference_utils.dart';
 import 'package:dio/dio.dart';
 
 import 'package:injectable/injectable.dart';

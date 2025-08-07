@@ -1,6 +1,6 @@
-import 'package:board_desktop/Core/constant/colors_constant.dart';
-import 'package:board_desktop/Core/extension/screen_size_extension.dart';
-import 'package:board_desktop/Features/Widgets/text.dart';
+import 'package:board_mobile/Core/constant/colors_constant.dart';
+import 'package:board_mobile/Core/extension/screen_size_extension.dart';
+import 'package:board_mobile/Features/Widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class CustomDialog extends StatelessWidget {

@@ -1,4 +1,4 @@
-name: board_desktop
+name: board_mobile
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ^3.8.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,6 +38,8 @@ dependencies:
   injectable: ^2.3.2
   internet_connection_checker: ^1.0.0+1
   shared_preferences: ^2.2.3
+  json_annotation: ^4.9.0
+  dartz: ^0.10.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -47,6 +49,8 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.4.6
   injectable_generator: ^2.3.2
+  freezed: ^3.2.0
+  json_serializable: ^6.8.0
   flutter_test:
     sdk: flutter
 

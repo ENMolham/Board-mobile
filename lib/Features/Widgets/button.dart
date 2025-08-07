@@ -1,4 +1,4 @@
-import 'package:board_desktop/Features/Widgets/text.dart';
+import 'package:board_mobile/Features/Widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {

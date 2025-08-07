@@ -1,4 +1,4 @@
-import 'package:board_desktop/Core/constant/image_constant.dart';
+import 'package:board_mobile/Core/constant/image_constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomLogo extends StatelessWidget {
@@ -11,12 +11,14 @@ class CustomLogo extends StatelessWidget {
       {super.key,
       required this.widthLogo,
       required this.heightLogo,
-      this.colorFilter, required this.paddingTop, required this.paddingRight});
+      this.colorFilter,
+      required this.paddingTop,
+      required this.paddingRight});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: paddingTop,right: paddingRight),
+      padding: EdgeInsets.only(top: paddingTop, right: paddingRight),
       child: Container(
         width: widthLogo,
         height: heightLogo,

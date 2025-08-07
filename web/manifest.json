@@ -1,6 +1,6 @@
 {
-    "name": "board_desktop",
-    "short_name": "board_desktop",
+    "name": "board_mobile",
+    "short_name": "board_mobile",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
