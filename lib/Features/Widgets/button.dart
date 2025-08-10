@@ -10,25 +10,34 @@ class CustomButton extends StatelessWidget {
   final double sizeText;
   final double paddingTop;
   final double paddingRight;
+  final double paddingBottom;
   final void Function() onTap;
   final double radius;
-  const CustomButton(
-      {super.key,
-      required this.widthButton,
-      required this.heightButton,
-      required this.colorButton,
-      required this.colorText,
-      required this.text,
-      required this.sizeText,
-      required this.paddingTop,
-      required this.onTap,
-      required this.radius,
-      required this.paddingRight});
+  final BoxBorder? border;
+  const CustomButton({
+    super.key,
+    required this.widthButton,
+    required this.heightButton,
+    required this.colorButton,
+    required this.colorText,
+    required this.text,
+    required this.sizeText,
+    required this.paddingTop,
+    required this.onTap,
+    required this.radius,
+    required this.paddingRight,
+    this.border,
+    this.paddingBottom = 0.0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: paddingTop, right: paddingRight),
+      padding: EdgeInsets.only(
+        top: paddingTop,
+        right: paddingRight,
+        bottom: paddingBottom,
+      ),
       child: InkWell(
         onTap: onTap,
         child: Container(
@@ -37,6 +46,7 @@ class CustomButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: colorButton,
             borderRadius: BorderRadius.all(Radius.circular(radius)),
+            border: border,
           ),
           alignment: Alignment.center,
           child: CustomText(

@@ -64,6 +64,7 @@ class SignUp extends StatelessWidget {
                 paddingTop: context.screenHeight * 0.0334,
                 color: ColorConstant.white,
                 textAlign: TextAlign.right,
+                border: Border.all(color: ColorConstant.mainColor, width: 3),
               ),
               CustomTextFormField(
                 widthFiled: context.screenWidth * 0.8636,
@@ -76,6 +77,7 @@ class SignUp extends StatelessWidget {
                 paddingTop: context.screenHeight * 0.025,
                 color: ColorConstant.white,
                 textAlign: TextAlign.right,
+                border: Border.all(color: ColorConstant.mainColor, width: 3),
               ),
               CustomTextFormField(
                 widthFiled: context.screenWidth * 0.8636,
@@ -86,7 +88,7 @@ class SignUp extends StatelessWidget {
                 enabled: true,
                 hintText: "البريد الالكتروني",
                 paddingTop: context.screenHeight * 0.025,
-
+                border: Border.all(color: ColorConstant.mainColor, width: 3),
                 color: ColorConstant.white,
                 textAlign: TextAlign.right,
               ),
@@ -97,7 +99,10 @@ class SignUp extends StatelessWidget {
                     heightFiled: context.screenHeight * 0.0606,
                     radius: 10,
                     obscureText: passwordVisible,
-
+                    border: Border.all(
+                      color: ColorConstant.mainColor,
+                      width: 3,
+                    ),
                     keyboardType: TextInputType.name,
                     enabled: true,
                     hintText: "كلمة المرور",

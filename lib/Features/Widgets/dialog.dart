@@ -11,14 +11,15 @@ class CustomDialog extends StatelessWidget {
   final void Function() onPressed1;
   final void Function() onPressed2;
 
-  const CustomDialog(
-      {super.key,
-      required this.title,
-      required this.message,
-      required this.textbutton1,
-      required this.textbutton2,
-      required this.onPressed1,
-      required this.onPressed2});
+  const CustomDialog({
+    super.key,
+    required this.title,
+    required this.message,
+    required this.textbutton1,
+    required this.textbutton2,
+    required this.onPressed1,
+    required this.onPressed2,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,61 +27,65 @@ class CustomDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: SizedBox(
         width: context.screenWidth * 0.3,
+        height: context.screenHeight * 0.2,
         child: Padding(
-          padding: EdgeInsets.only(
-              top: context.screenHeight * 0.05,
-              bottom: context.screenHeight * 0.05),
+          padding: EdgeInsets.only(top: context.screenHeight * 0.03),
           child: Column(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Center(
                 child: CustomText(
-                    text: title,
-                    color: ColorConstant.red,
-                    size: context.fontSize_32,
-                    fontWeight: FontWeight.bold,
-                    paddingTop: 0,
-                    paddingright: 0),
-              ),
-              const SizedBox(height: 16),
-              CustomText(
-                  text: message,
-                  color: ColorConstant.black,
+                  text: title,
+                  color: ColorConstant.red,
                   size: context.fontSize_24,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.bold,
                   paddingTop: 0,
-                  paddingright: 0),
-              const SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorConstant.mainColor,
-                    ),
-                    onPressed: onPressed1,
-                    child: CustomText(
+                  paddingright: 0,
+                ),
+              ),
+              CustomText(
+                text: message,
+                color: ColorConstant.black,
+                size: context.fontSize_16,
+                fontWeight: FontWeight.w400,
+                paddingTop: context.screenHeight * 0.01,
+                paddingright: 0,
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: context.screenHeight * 0.03),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorConstant.mainColor,
+                      ),
+                      onPressed: onPressed1,
+                      child: CustomText(
                         text: textbutton1,
                         color: ColorConstant.white,
                         size: context.fontSize_18,
                         fontWeight: FontWeight.normal,
                         paddingTop: 0,
-                        paddingright: 0),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                        paddingright: 0,
+                      ),
                     ),
-                    onPressed: onPressed2,
-                    child: CustomText(
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
+                      onPressed: onPressed2,
+                      child: CustomText(
                         text: textbutton2,
                         color: ColorConstant.white,
                         size: context.fontSize_18,
                         fontWeight: FontWeight.normal,
                         paddingTop: 0,
-                        paddingright: 0),
-                  ),
-                ],
+                        paddingright: 0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

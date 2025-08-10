@@ -3,7 +3,7 @@ import 'package:board_mobile/Core/extension/screen_size_extension.dart';
 import 'package:board_mobile/Features/Auth/forgetPassword/presentation/forgetpassword_page.dart';
 import 'package:board_mobile/Features/Auth/login/cubit/password_visibility_cubit.dart';
 import 'package:board_mobile/Features/Auth/signup/presentation/signup_page.dart';
-import 'package:board_mobile/Features/User/home/presentation/home_page.dart';
+import 'package:board_mobile/Features/User/home/presentation/home.dart';
 import 'package:board_mobile/Features/Widgets/button.dart';
 import 'package:board_mobile/Features/Widgets/logo.dart';
 import 'package:board_mobile/Features/Widgets/text.dart';
@@ -65,6 +65,7 @@ class LoginPage extends StatelessWidget {
                 paddingTop: context.screenHeight * 0.06,
                 color: ColorConstant.white,
                 textAlign: TextAlign.right,
+                border: Border.all(color: ColorConstant.mainColor, width: 3),
               ),
               BlocBuilder<PasswordVisibilityCubit, bool>(
                 builder: (context, passwordVisible) {
@@ -77,6 +78,10 @@ class LoginPage extends StatelessWidget {
                     enabled: true,
                     hintText: "كلمة المرور",
                     paddingTop: context.screenHeight * 0.025,
+                    border: Border.all(
+                      color: ColorConstant.mainColor,
+                      width: 3,
+                    ),
                     color: ColorConstant.white,
                     textAlign: TextAlign.right,
                     prefixIcon: IconButton(
@@ -121,7 +126,7 @@ class LoginPage extends StatelessWidget {
                 onTap: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    MaterialPageRoute(builder: (context) => const Home()),
                     (Route<dynamic> route) => false,
                   );
                 },

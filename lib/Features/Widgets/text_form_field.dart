@@ -11,7 +11,10 @@ class CustomTextFormField extends StatelessWidget {
   final bool enabled;
   final String hintText;
   final double paddingTop;
+  final double paddingRight;
+  final double paddingLeft;
   final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final Color color;
   final TextAlign textAlign;
   final BoxBorder? border;
@@ -41,50 +44,62 @@ class CustomTextFormField extends StatelessWidget {
     this.fontWeightInput,
     this.isverify,
     this.colorTextInput,
+    this.paddingRight = 0.0,
+    this.paddingLeft = 0.0,
+    this.suffixIcon,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: paddingTop),
+      padding: EdgeInsets.only(
+        top: paddingTop,
+        right: paddingRight,
+        left: paddingLeft,
+      ),
       child: Container(
         width: widthFiled,
         height: heightFiled,
         decoration: BoxDecoration(
-          color: color,
           borderRadius: BorderRadius.all(Radius.circular(radius)),
           border: border,
         ),
-        child: TextFormField(
-          maxLength: maxLength,
-          keyboardType: keyboardType,
-          textAlignVertical: TextAlignVertical.center,
-          textAlign: textAlign,
-          obscureText: obscureText,
-          style: TextStyle(
-            fontWeight: fontWeightInput,
-            fontSize: fontSizeInput,
-            color: colorTextInput,
-          ),
-          decoration: InputDecoration(
-            counter: const SizedBox.shrink(),
-            contentPadding: EdgeInsets.only(
-              bottom: (isverify ?? false)
-                  ? context.screenHeight * 0.0073
-                  : context.screenHeight * 0.0146,
-              right: context.screenWidth * 0.04,
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(radius)),
+          child: TextFormField(
+            maxLength: maxLength,
+            keyboardType: keyboardType,
+            textAlignVertical: TextAlignVertical.center,
+            textAlign: textAlign,
+            obscureText: obscureText,
+            style: TextStyle(
+              fontWeight: fontWeightInput,
+              fontSize: fontSizeInput,
+              color: colorTextInput,
             ),
-            enabled: enabled,
-            border: InputBorder.none,
-            hintText: hintText,
-            hintStyle: TextStyle(
-              color: ColorConstant.grey,
-              fontSize: context.fontSize_16,
+            decoration: InputDecoration(
+              fillColor: color,
+              filled: true,
+              counter: const SizedBox.shrink(),
+              contentPadding: EdgeInsets.only(
+                bottom: (isverify ?? false)
+                    ? context.screenHeight * 0.0073
+                    : context.screenHeight * 0.0146,
+                right: context.screenWidth * 0.04,
+              ),
+              enabled: enabled,
+              border: InputBorder.none,
+              hintText: hintText,
+              hintStyle: TextStyle(
+                color: ColorConstant.grey,
+                fontSize: context.fontSize_16,
+              ),
+              hintTextDirection: TextDirection.rtl,
+              suffixIcon: prefixIcon,
+              prefixIcon: suffixIcon,
             ),
-            hintTextDirection: TextDirection.rtl,
-            suffixIcon: prefixIcon,
+            onChanged: onChanged,
           ),
-          onChanged: onChanged,
         ),
       ),
     );
